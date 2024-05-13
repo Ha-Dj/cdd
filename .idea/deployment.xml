@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" autoUpload="Always" serverName="root@10.176.26.82:20151 password" remoteFilesAllowedToDisappearOnAutoupload="false">
+    <serverData>
+      <paths name="root@10.176.26.82:20151 password">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/root/MMIF-CDDFuse" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="root@10.176.26.92:20130 password">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/root/CDDFuse" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="root@10.176.26.92:20180 password">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/root/cddfuse" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="root@10.176.26.92:20200 password">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/root/MMIF-CDDFuse" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+      <paths name="root@10.176.26.92:20200 password (2)">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/root/MMIF-CDDFuse" local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
+  </component>
+</project>
