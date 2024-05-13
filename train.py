@@ -28,13 +28,13 @@ Configure our network
 '''
 
 
-os.environ['CUDA_VISIBLE_DEVICES'] = '6'
+os.environ['CUDA_VISIBLE_DEVICES'] = '0'
 criteria_fusion = Fusionloss()
 model_str = 'CDDFuse'
 
 # . Set the hyper-parameters for training
-num_epochs = 120 # total epoch
-epoch_gap = 40  # epoches of Phase I 
+num_epochs = 60 # total epoch
+epoch_gap = 20  # epoches of Phase I 
 
 lr = 1e-4
 weight_decay = 0
@@ -75,7 +75,7 @@ scheduler4 = torch.optim.lr_scheduler.StepLR(optimizer4, step_size=optim_step, g
 
 MSELoss = nn.MSELoss()  
 L1Loss = nn.L1Loss()
-Loss_ssim = kornia.losses.SSIM(11, reduction='mean')
+Loss_ssim = kornia.losses.SSIMLoss(11, reduction='mean')
 
 
 # data loader
@@ -85,8 +85,9 @@ trainloader = DataLoader(H5Dataset(r"/remote-home/jiedeng/cddfuse_msrs_data/MSRS
                          num_workers=0)
 
 loader = {'train': trainloader, }
-timestamp = datetime.datetime.now().strftime("%m-%d-%H-%M")
-
+timestamp = datetime.datetime.now().strftime("%m%d%H%M")
+save_path = f"/remote-home/jiedeng/cddfuse/models/CDDFuse_fse_{num_epochs}_{epoch_gap}_"+timestamp+'.pth'
+print(f"model will be saved in {save_path}")
 '''
 ------------------------------------------------------------------------------
 Train
@@ -214,6 +215,7 @@ if True:
         'BaseFuseLayer': BaseFuseLayer.state_dict(),
         'DetailFuseLayer': DetailFuseLayer.state_dict(),
     }
-    torch.save(checkpoint, os.path.join("/remote-home/jiedeng/cddfuse/models/CDDFuse_"+timestamp+'.pth'))
+    torch.save(checkpoint, os.path.join(save_path))
+
 
 
