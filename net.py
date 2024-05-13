@@ -396,7 +396,7 @@ class Restormer_Decoder(nn.Module):
 
     def forward(self, inp_img, base_feature, detail_feature):
         # 插入 自己设置的 fusion 通道模块
-        base_feature, detail_feature = self.f_se_block(base_feature, detail_feature)
+        # base_feature, detail_feature = self.f_se_block(base_feature, detail_feature)
 
         out_enc_level0 = torch.cat((base_feature, detail_feature), dim=1)
         # print(out_enc_level0.shape)
